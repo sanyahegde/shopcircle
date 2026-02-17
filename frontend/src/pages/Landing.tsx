@@ -12,19 +12,20 @@ export function Landing() {
 
   return (
     <div className="min-h-screen bg-cream flex flex-col">
-      <header className="flex items-center justify-between px-6 py-5 max-w-4xl mx-auto w-full">
-        <Link to="/" className="text-xl font-semibold text-charcoal tracking-tight">
-          shopcircle
-        </Link>
-        <Link
-          to="/login"
-          className="text-sand-500 text-sm font-medium hover:text-charcoal transition-colors"
-        >
-          log in
-        </Link>
-      </header>
+      <div className="min-h-screen flex flex-col">
+        <header className="flex items-center justify-between px-6 py-5 max-w-4xl mx-auto w-full">
+          <Link to="/" className="text-xl font-semibold text-charcoal tracking-tight">
+            shopcircle
+          </Link>
+          <Link
+            to="/login"
+            className="text-sand-500 text-sm font-medium hover:text-charcoal transition-colors"
+          >
+            log in
+          </Link>
+        </header>
 
-      <section className="flex-1 flex flex-col items-center justify-center px-6 pt-8 pb-16">
+        <section className="flex-1 flex flex-col items-center justify-center px-6 pt-8 pb-16">
         <h1 className="text-4xl sm:text-5xl md:text-[48px] font-semibold text-charcoal text-center leading-tight max-w-2xl opacity-0 animate-fade-in-up">
           shop smarter with your circle
         </h1>
@@ -37,7 +38,8 @@ export function Landing() {
         >
           start for free →
         </Link>
-      </section>
+        </section>
+      </div>
 
       <section
         id="get-started"
