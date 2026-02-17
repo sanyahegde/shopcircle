@@ -6,19 +6,25 @@ type ProductCardProps = {
 
 export function ProductCard({ title, imageUrl, onAddToList }: ProductCardProps) {
   return (
-    <div className="rounded-card border border-neutral-primary bg-neutral-bg p-4 shadow-card hover:shadow-card-hover hover:border-sand-300 transition-all overflow-hidden">
+    <div className="group cursor-pointer">
       {imageUrl && (
-        <div className="aspect-square bg-sand-100 rounded-button mb-4">
-          <img src={imageUrl} alt="" className="w-full h-full object-cover rounded-button" />
+        <div className="aspect-square overflow-hidden rounded-sm mb-3 bg-cream-100">
+          <img
+            src={imageUrl}
+            alt=""
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
         </div>
       )}
-      <div>
-        {title && <p className="font-medium text-charcoal">{title}</p>}
+      <div className="space-y-1">
+        {title && (
+          <p className="text-sm lowercase text-warm-black font-light">{title}</p>
+        )}
         {onAddToList && (
           <button
             type="button"
             onClick={onAddToList}
-            className="mt-2 text-sm text-rose font-medium hover:underline"
+            className="text-sm lowercase text-warm-gray hover:text-warm-black transition-colors duration-300"
           >
             add to list
           </button>

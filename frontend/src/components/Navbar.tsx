@@ -11,54 +11,39 @@ export function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-10 border-b border-neutral-primary bg-cream/95 backdrop-blur-sm">
-      <div className="max-w-5xl mx-auto px-4 flex items-center justify-between h-14">
-        <Link to="/home" className="text-lg font-semibold text-charcoal tracking-tight">
+    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-cream-200 z-50">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <Link to="/home" className="text-lg font-light lowercase tracking-wide text-warm-black">
           shopcircle
         </Link>
-        <div className="flex items-center gap-6">
-          <Link
-            to="/home"
-            className="text-sm text-sand-500 hover:text-charcoal transition-colors"
-          >
+        <div className="flex items-center gap-8 text-sm lowercase text-warm-gray">
+          <Link to="/home" className="hover:text-warm-black transition-colors duration-300">
             home
           </Link>
-          <Link
-            to="/products"
-            className="text-sm text-sand-500 hover:text-charcoal transition-colors"
-          >
+          <Link to="/products" className="hover:text-warm-black transition-colors duration-300">
             my products
           </Link>
-          <Link
-            to="/lists"
-            className="text-sm text-sand-500 hover:text-charcoal transition-colors"
-          >
+          <Link to="/lists" className="hover:text-warm-black transition-colors duration-300">
             lists
           </Link>
-          <Link
-            to="/friends"
-            className="text-sm text-sand-500 hover:text-charcoal transition-colors"
-          >
+          <Link to="/friends" className="hover:text-warm-black transition-colors duration-300">
             friends
           </Link>
-          <Link
-            to="/profile"
-            className="text-sm text-sand-500 hover:text-charcoal transition-colors"
-          >
+          <Link to="/profile" className="hover:text-warm-black transition-colors duration-300">
             profile
           </Link>
-          <span className="text-sand-400">|</span>
+          <span className="text-cream-300">|</span>
           {isGuest ? (
-            <span className="text-sm text-sand-500">guest</span>
+            <span className="text-warm-gray">guest</span>
           ) : (
-            <span className="text-sm text-charcoal truncate max-w-[120px]">
+            <span className="text-warm-black truncate max-w-[120px]">
               {user?.name ?? user?.email}
             </span>
           )}
           <button
             type="button"
             onClick={handleLogout}
-            className="text-sm text-rose font-medium hover:underline"
+            className="text-warm-gray hover:text-warm-black transition-colors duration-300"
           >
             log out
           </button>

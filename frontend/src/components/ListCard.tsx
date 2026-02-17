@@ -10,11 +10,11 @@ export function ListCard({ id, title, itemCount }: ListCardProps) {
   return (
     <Link
       to={`/lists/${id}`}
-      className="block rounded-card border border-neutral-primary bg-neutral-bg p-4 shadow-card hover:shadow-card-hover hover:border-sand-300 transition-all"
+      className="block border border-cream-200 rounded p-4 bg-cream-50 hover:border-cream-300 transition-colors duration-300"
     >
-      <p className="font-medium text-charcoal">{title}</p>
+      <p className="font-light text-warm-black lowercase">{title}</p>
       {itemCount != null && (
-        <p className="text-sm text-sand-500 mt-1">{itemCount} items</p>
+        <p className="text-sm text-warm-gray mt-1">{itemCount} items</p>
       )}
     </Link>
   )

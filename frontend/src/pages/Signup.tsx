@@ -26,36 +26,33 @@ export function Signup() {
   }
 
   const inputClass =
-    'w-full px-4 py-3 rounded-button border border-neutral-primary bg-sand-100 text-charcoal placeholder-sand-500 focus:outline-none focus:ring-2 focus:ring-rose/40 focus:border-rose transition-colors'
+    'w-full bg-cream-100 border border-cream-200 rounded-sm px-4 py-3 text-sm lowercase text-warm-black placeholder:text-warm-gray focus:outline-none focus:border-cream-500 transition-colors duration-300'
 
   return (
-    <div className="min-h-screen bg-cream flex flex-col">
+    <div className="min-h-screen bg-cream-50 flex flex-col">
       <header className="flex items-center justify-between px-6 py-5 max-w-4xl mx-auto w-full">
-        <Link to="/" className="text-xl font-semibold text-charcoal tracking-tight">
+        <Link to="/" className="text-lg font-light lowercase tracking-wide text-warm-black">
           shopcircle
         </Link>
-        <Link
-          to="/login"
-          className="text-sand-500 text-sm font-medium hover:text-charcoal transition-colors"
-        >
+        <Link to="/login" className="text-sm lowercase text-warm-gray hover:text-warm-black transition-colors duration-300">
           log in
         </Link>
       </header>
 
-      <main className="flex-1 flex items-center justify-center px-6 py-12">
+      <main className="flex-1 flex items-center justify-center px-6 py-24">
         <div className="w-full max-w-sm">
-          <h1 className="text-3xl font-semibold text-charcoal mb-2">sign up</h1>
-          <p className="text-sand-500 text-sm mb-8">
+          <h1 className="text-4xl font-light lowercase text-warm-black mb-2">sign up</h1>
+          <p className="text-warm-gray text-sm mb-8">
             create an account to save lists and share with your circle.
           </p>
           <form onSubmit={handleSubmit} className="space-y-5">
             {error && (
-              <p className="text-sm text-charcoal bg-rose/15 rounded-button px-3 py-2">
+              <p className="text-sm text-warm-black bg-cream-200/50 rounded-sm px-3 py-2">
                 {error}
               </p>
             )}
             <div>
-              <label htmlFor="signup-name" className="block text-sm font-medium text-charcoal mb-1.5">
+              <label htmlFor="signup-name" className="block text-sm font-normal lowercase text-warm-black mb-1.5">
                 name (optional)
               </label>
               <input
@@ -69,7 +66,7 @@ export function Signup() {
               />
             </div>
             <div>
-              <label htmlFor="signup-email" className="block text-sm font-medium text-charcoal mb-1.5">
+              <label htmlFor="signup-email" className="block text-sm font-normal lowercase text-warm-black mb-1.5">
                 email
               </label>
               <input
@@ -84,7 +81,7 @@ export function Signup() {
               />
             </div>
             <div>
-              <label htmlFor="signup-password" className="block text-sm font-medium text-charcoal mb-1.5">
+              <label htmlFor="signup-password" className="block text-sm font-normal lowercase text-warm-black mb-1.5">
                 password
               </label>
               <input
@@ -102,14 +99,14 @@ export function Signup() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 px-6 rounded-button bg-rose text-white text-sm font-medium hover:opacity-90 hover:shadow-card transition-all disabled:opacity-60"
+              className="w-full py-2.5 px-6 rounded-sm bg-cream-500 text-white text-sm lowercase tracking-wide hover:opacity-90 transition-opacity duration-300 disabled:opacity-60"
             >
-              {loading ? 'creating account…' : 'sign up'}
+              {loading ? 'creating account…' : 'create account'}
             </button>
           </form>
-          <p className="mt-6 text-center text-sand-500 text-sm">
+          <p className="mt-8 text-center text-warm-gray text-sm">
             have an account?{' '}
-            <Link to="/login" className="text-rose font-medium hover:underline">
+            <Link to="/login" className="text-warm-black hover:opacity-80 transition-opacity">
               log in
             </Link>
           </p>

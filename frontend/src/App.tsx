@@ -103,9 +103,9 @@ export default function App() {
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream-50">
       <Navbar />
-      <main className="max-w-5xl mx-auto px-4 py-8">{children}</main>
+      <main className="max-w-7xl mx-auto px-6 pt-24 pb-24">{children}</main>
     </div>
   )
 }
