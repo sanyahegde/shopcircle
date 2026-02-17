@@ -21,9 +21,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [isGuest, setIsGuest] = useState(false)
 
-  const login = useCallback(async (email: string, _password: string) => {
-    // TODO: call backend POST /auth/login
-    setUser({ id: '1', email, name: email.split('@')[0] })
+  const login = useCallback(async (emailOrUsername: string, password: string) => {
+    // Hardcoded admin login for development
+    if (emailOrUsername === 'admin' && password === 'adminpassword') {
+      setUser({ id: 'admin', email: 'admin@shopcircle.local', name: 'admin' })
+      setIsGuest(false)
+      return
+    }
+    // TODO: call backend POST /auth/login for normal users
+    setUser({ id: '1', email: emailOrUsername, name: emailOrUsername.split('@')[0] })
     setIsGuest(false)
   }, [])
 
